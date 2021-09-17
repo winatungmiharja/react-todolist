@@ -1,0 +1,28 @@
+.new-type-wrapper {
+  padding-top: 15px;
+}
+.new-type-wrapper-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+.new-type-wrapper h4 {
+  margin: 0;
+}
+.new-type-wrapper .text {
+  padding: 10px 0px;
+  padding-bottom: 20px;
+}
+
+.new-type-wrapper button {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  border: 0;
+  padding: 2px 9px;
+  border-radius: 20px;
+}
+
+.bg-purple {
+  background-color: #eacbfb;
+}

@@ -1,0 +1,35 @@
+.new-todo-card-wrapper {
+  display: grid;
+  row-gap: 20px;
+  padding-bottom: 30px;
+}
+.new-todo-card-wrapper-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.new-todo-card-wrapper button {
+  background-color: #f5f5f5;
+}
+
+.new-todo-card-wrapper h3 {
+  text-decoration: underline;
+  margin: 0;
+}
+
+.new-todo-card-wrapper button {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  border: 0;
+  padding: 2px 9px;
+  border-radius: 20px;
+}
+
+.error-text {
+  color: red;
+}
+
+.bg-purple {
+  background-color: #eacbfb;
+}

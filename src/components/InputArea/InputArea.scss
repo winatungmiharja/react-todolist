@@ -1,0 +1,14 @@
+textarea {
+  border: 0.5px solid #adadad;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  font-family: "Poppins", sans-serif;
+  min-width: 100%;
+  font-size: 12px;
+}
+textarea:placeholder {
+  font-family: "Poppins", sans-serif;
+  color: #ccc;
+}

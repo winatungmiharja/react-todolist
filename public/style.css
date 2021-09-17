@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Sora:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  margin: 0;
+  overflow: hidden;
+}
+body {
+  overflow-x: hidden;
+  background-color: #f9f9ff;
+  font-family: "Sora", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000;
+  font-weight: 700;
+  margin: 20px 0;
+  font-family: "Sora", sans-serif;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+}
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+p {
+  font-size: 12px;
+}
+
+a {
+  color: #ff4c60;
+  outline: 0;
+  transition: all 0.3s ease-in-out;
+}
+a:hover {
+  color: #f9f9ff;
+  text-decoration: none;
+}

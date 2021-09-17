@@ -1,0 +1,94 @@
+.component {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.component .layer {
+  position: absolute;
+}
+.component .p1 {
+  max-width: 320px;
+  right: 120px;
+  bottom: -20%;
+}
+.component .roket {
+  max-width: 250px;
+  left: 12%;
+  bottom: 0%;
+  animation: go-up 50s infinite ease;
+}
+.component .laptop {
+  max-width: 250px;
+  left: 20%;
+  top: 3%;
+  animation: left-right 20s infinite;
+}
+.panah {
+  position: absolute;
+  max-width: 250px;
+  right: 25%;
+  top: 30%;
+  animation: left-right 20s infinite;
+}
+.presentasi {
+  position: absolute;
+  transform: rotate(-20deg);
+  max-width: 350px;
+  top: -140px;
+  right: -80px;
+  animation: go-up 50s infinite ease;
+}
+.ngoding {
+  position: absolute;
+  max-width: 450px;
+  bottom: 0px;
+  left: 0;
+}
+.hai {
+  z-index: 30;
+  position: absolute;
+  max-width: 450px;
+  top: 0px;
+  right: 0;
+}
+.megaphone {
+  position: absolute;
+  transform: rotate(-20deg);
+  max-width: 350px;
+  top: -260px;
+  left: -70px;
+  animation: left-right 50s infinite ease;
+}
+
+@keyframes go-up {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(70px, -70px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes left-right {
+  0% {
+    transform: rotate(0) translate(0);
+  }
+  25% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
