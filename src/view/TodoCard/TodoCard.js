@@ -1,23 +1,23 @@
 import React, { useState } from "react";
-import { Card } from "../../components/Card/Card";
-import { Trash2 } from "react-feather";
+import ContentTodoCard from "./ContentTodoCard";
 import { useDispatchTodo } from "../../data/Todo";
 import "./TodoCard.scss";
+import EditedTodoCard from "./EditedTodoCard";
 
 const TodoCard = ({ item }) => {
   const [isChecked, setIsChecked] = useState(
     item.status === "completed" ? 1 : 0
   );
+  const [isEdited, setIsEdited] = useState(0);
   const dispatch = useDispatchTodo();
 
-  const addToBoard = (item) => {
+  const addToCompleted = (item) => {
     setIsChecked(true);
     setTimeout(() => {
       dispatch({ type: "UPDATE STATUS", data: { item, status: "completed" } });
       setIsChecked(false);
     }, 200);
   };
-
   const deleteFromBoard = (item) => {
     dispatch({ type: "DELETE TODO", data: { item } });
   };
@@ -28,29 +28,17 @@ const TodoCard = ({ item }) => {
         item.status === "completed" ? "done" : "progress"
       } todo-card`}
     >
-      <div className="todo-card-wrapper">
-        <div className="todo-card-check">
-          <h4>{item.title}</h4>
-          <label class="check-container">
-            {isChecked ? (
-              <input type="checkbox" checked />
-            ) : (
-              <input type="checkbox" onClick={() => addToBoard(item)} />
-            )}
-            <span class="checkmark"></span>
-          </label>
-        </div>
-        {item.description && (
-          <p className="item-description">{item.description}</p>
-        )}
-        <p></p>
-        <div class="todo-card-wrapper-button">
-          <button disabled="disabled">{item.type}</button>
-          <i onClick={() => deleteFromBoard(item)}>
-            <Trash2 />
-          </i>
-        </div>
-      </div>
+      {isEdited ? (
+        <EditedTodoCard item={item} setIsEdited={setIsEdited} />
+      ) : (
+        <ContentTodoCard
+          item={item}
+          isChecked={isChecked}
+          addToCompleted={addToCompleted}
+          deleteFromBoard={deleteFromBoard}
+          setIsEdited={setIsEdited}
+        />
+      )}
     </div>
   );
 };

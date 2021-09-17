@@ -13,10 +13,10 @@ const addTodo = (state, info) => {
     type: info.type,
   };
   id++;
-  return { ...state, todo: [...state.todo, newData] };
+  return { ...state, todo: [newData, ...state.todo] };
 };
 
-const updateItem = (state, info) => {
+const updateStatus = (state, info) => {
   const newData = {
     ...info.item,
     status: info.status,
@@ -29,6 +29,21 @@ const updateItem = (state, info) => {
     ...state,
     [info.status]: [...newStatus],
     [info.item.status]: [...deleteStatus],
+  };
+};
+
+const updateData = (state, info) => {
+  console.log(info.item);
+  const newState = state[info.item.status].map((key) => {
+    if (key.id === info.item.id) {
+      return { ...info.item };
+    } else {
+      return { ...key };
+    }
+  });
+  return {
+    ...state,
+    [info.item.status]: [...newState],
   };
 };
 
@@ -47,24 +62,16 @@ const intialState = {
   completed: [],
 };
 
-// action.data {
-//   status : " ",
-//   item : {
-//     ...
-//   }
-// }
-
 const reducer = (state, action) => {
   switch (action.type) {
     case "ADD TODO":
-      let text = addTodo(state, action.data);
-      return text;
+      return addTodo(state, action.data);
     case "UPDATE STATUS":
-      let text1 = updateItem(state, action.data);
-      return text1;
+      return updateStatus(state, action.data);
+    case "UPDATE DATA":
+      return updateData(state, action.data);
     case "DELETE TODO":
-      let text2 = deleteItem(state, action.data);
-      return text2;
+      return deleteItem(state, action.data);
     default:
       return state;
   }

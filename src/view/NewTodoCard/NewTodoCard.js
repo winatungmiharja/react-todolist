@@ -43,19 +43,9 @@ const NewTodoCard = (params) => {
     }
   };
 
-  const setTitle = (title) => {
+  const setChange = (option, value) => {
     setTask((prevState) => {
-      return { ...prevState, title: title };
-    });
-  };
-  const setDescription = (description) => {
-    setTask((prevState) => {
-      return { ...prevState, description: description };
-    });
-  };
-  const setType = (type) => {
-    setTask((prevState) => {
-      return { ...prevState, type: type };
+      return { ...prevState, [option]: value };
     });
   };
 
@@ -72,10 +62,13 @@ const NewTodoCard = (params) => {
               id="title"
               label="title"
               value={task.title}
-              setChange={setTitle}
+              setChange={(value) => setChange("title", value)}
             />
           </div>
-          <Dropdown value={task.type} setChange={setType} />
+          <Dropdown
+            value={task.type}
+            setChange={(value) => setChange("type", value)}
+          />
         </div>
         <div classname="new-description">
           <p>Description</p>
@@ -83,7 +76,7 @@ const NewTodoCard = (params) => {
             id="description"
             label="write your task's description"
             value={task.description}
-            setChange={setDescription}
+            setChange={(value) => setChange("description", value)}
           />
         </div>
         <button onClick={checkInput} style={style}>

@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Sora:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap");
+
+%focus {
+  outline: 0;
+}
+
+.input-title {
+  position: relative;
+  width: 100%;
+  color: black;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+
+  input {
+    color: #000;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: "Sora", sans-serif;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+
+    &:focus {
+      @extend %focus;
+    }
+  }
+
+  &:focus {
+    @extend %focus;
+  }
+}

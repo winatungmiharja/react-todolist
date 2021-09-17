@@ -105,6 +105,14 @@ input[type="checkbox"] {
 .todo-card-wrapper-button {
   display: flex;
   justify-content: space-between;
+  .button-group {
+    position: relative;
+    top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 10px;
+  }
 }
 
 .item-description {

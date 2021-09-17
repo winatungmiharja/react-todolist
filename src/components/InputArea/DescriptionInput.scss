@@ -1,0 +1,28 @@
+%focus {
+  outline: 0;
+}
+.input-desc {
+  padding-top: 20px;
+  textarea {
+    background-color: transparent;
+    box-sizing: border-box;
+
+    padding: 0.5em;
+    font-family: "Poppins", sans-serif;
+    min-width: 100%;
+    font-size: 12px;
+    &:focus {
+      @extend %focus;
+    }
+  }
+  textarea:placeholder {
+    font-family: "Poppins", sans-serif;
+    color: #ccc;
+    &:focus {
+      @extend %focus;
+    }
+  }
+  &:focus {
+    @extend %focus;
+  }
+}
