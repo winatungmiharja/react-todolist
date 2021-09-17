@@ -1,9 +1,11 @@
 import { useState } from "react";
+
 import CompletedTodoWrapper from "./view/TodoWrapper/CompletedTodoWrapper";
 import TodoWrapper from "./view/TodoWrapper/TodoWrapper";
 import Background from "./view/Background/Background";
 import Sidebar from "./view/Sidebar/Sidebar";
 import Header from "./view/Header/Header";
+
 import { useType } from "./data/Type";
 import { useTodo } from "./data/Todo";
 import status from "./data/Status";
@@ -16,7 +18,6 @@ const App = () => {
   const changeFilter = (item) => {
     setFilter(item);
   };
-
   const filterData = (data, option) => {
     if (option === "See All") {
       return data;
@@ -24,7 +25,6 @@ const App = () => {
       return data.filter((item) => item.type === option);
     }
   };
-
   const todoData = filterData(data["todo"], filter);
   const completedData = filterData(data["completed"], filter);
 

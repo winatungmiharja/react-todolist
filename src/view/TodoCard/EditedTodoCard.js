@@ -41,7 +41,6 @@ const EditedTodoCard = ({ item, setIsEdited, status }) => {
         id="edit-desc"
         setChange={(value) => setChange("description", value)}
       />
-      <p></p>
       <div class="todo-card-wrapper-button">
         <button disabled="disabled">{item.type}</button>
         <div className="button-group">
